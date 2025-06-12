@@ -1,1 +1,120 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omegle Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div class="home-container" id="homeScreen">
+        <div class="home-content">
+            <div class="logo">Omegle Clone</div>
+            <div class="tagline">Talk to strangers!</div>
+            <div class="description">
+                By using this website, you accept the terms at the bottom. You must be 18+, or 13+ with parental permission.<br>
+                Video is monitored, so keep it clean!<br>
+                Go to an adult site instead if that's what you want
+            </div>
+            <div class="buttons">
+                <button class="btn btn-primary" id="startChatBtn">Start a chat</button>
+                <button class="btn btn-secondary" id="startVideoBtn">Video</button>
+            </div>
+            <div class="interests">
+                <input type="text" id="interestsInput" placeholder="Add your interests (optional)">
+            </div>
+            <div class="footer">
+                <p>Omegle Clone is a great way to meet new friends, even while practicing social distancing</p>
+                <div class="footer-links">
+                    <a href="#" id="termsLink">Terms & Conditions</a>
+                    <a href="#" id="privacyLink">Privacy Policy</a>
+                    <a href="#" id="dmcaLink">DMCA Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Terms Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeTermsModal">&times;</span>
+            <h3 class="modal-title">Terms and Conditions</h3>
+            <p class="modal-text">
+                By using this website, you agree that any actions you take during your use — including text, audio, photo, video communication — are solely your responsibility. Any illegal, abusive, or inappropriate activity is strictly prohibited. The creator or owner of this website will not be held liable for user actions. In case of any violation of laws, the individual user will be solely responsible and may be reported to authorities if required.
+            </p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="agreeBtn">Agree</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-exit" id="chatExitBtn">&times;</div>
+            <div class="chat-title">Omegle Clone</div>
+            <div class="chat-status">
+                <div class="status-indicator" id="statusIndicator"></div>
+                <span id="statusText">Disconnected</span>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input-container">
+            <button class="attach-btn" id="attachBtn">+
+                <div class="attach-menu" id="attachMenu">
+                    <div class="attach-option" id="sendLocation">Send Location</div>
+                    <div class="attach-option" id="sendPhoto">Send Photo</div>
+                    <div class="attach-option" id="sendVideo">Send Video</div>
+                </div>
+            </button>
+            <input type="text" class="chat-input" id="messageInput" placeholder="Type your message...">
+            <button class="send-btn" id="sendBtn">&#10148;</button>
+            <button class="connect-btn" id="connectBtn">
+                <div class="connect-icon"></div>
+                <span>Connect</span>
+            </button>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" class="hidden-file-input">
+        <input type="file" id="videoInput" accept="video/*" class="hidden-file-input">
+    </div>
+
+    <!-- Video Chat Interface -->
+    <div class="video-container" id="videoContainer">
+        <div class="video-header">
+            <div class="video-exit" id="videoExitBtn">&times;</div>
+            <div class="video-title">Omegle Video Clone</div>
+        </div>
+
+        <div class="video-feeds">
+            <div class="video-feed remote">
+                <video class="video-element" id="remoteVideo" autoplay playsinline></video>
+            </div>
+
+            <div class="video-feed local">
+                <video class="video-element" id="localVideo" autoplay playsinline muted></video>
+            </div>
+        </div>
+
+        <div class="video-chat">
+            <div class="chat-messages" id="videoChatMessages">
+                <!-- Video chat messages will appear here -->
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="videoMessageInput" placeholder="Type your message...">
+                <button class="send-btn" id="videoSendBtn">&#10148;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Context Menu -->
+    <div class="message-menu" id="messageMenu">
+        <div class="menu-item" id="deleteMessage">Delete</div>
+        <div class="menu-item" id="replyMessage">Reply</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
